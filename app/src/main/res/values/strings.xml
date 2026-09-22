@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Book</string>
+    <string name="books_title">Books</string>
+    <string name="add_book_title">Add book</string>
+    <string name="add_book">Add book</string>
+    <string name="title_label">Title</string>
+    <string name="author_label">Author</string>
+    <string name="description_label">Description</string>
+    <string name="read_label">Read</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="status_read">Read</string>
+    <string name="status_not_read">Not read</string>
+    <string name="empty_books">No books yet</string>
 </resources>
