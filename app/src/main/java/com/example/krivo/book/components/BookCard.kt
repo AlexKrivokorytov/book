@@ -18,9 +18,11 @@ import com.example.krivo.book.model.Book
 @Composable
 fun BookCard(
     book: Book,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Card(
+        onClick = onClick,
         modifier = modifier.fillMaxWidth()
     ) {
         Column(
