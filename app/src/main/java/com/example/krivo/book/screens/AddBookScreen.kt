@@ -28,6 +28,12 @@ fun AddBookScreen(
         onDescriptionChange = { description = it },
         isRead = isRead,
         onIsReadChange = { isRead = it },
+        onClear = {
+            title = ""
+            author = ""
+            description = ""
+            isRead = false
+        },
         onSave = {
             onSave(
                 title.trim(),

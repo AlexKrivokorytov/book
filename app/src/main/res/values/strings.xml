@@ -16,4 +16,5 @@
     <string name="book_not_found">Book not found</string>
     <string name="mark_read">Mark as read</string>
     <string name="mark_unread">Mark as unread</string>
+    <string name="clear_form">Clear form</string>
 </resources>

@@ -29,6 +29,7 @@ fun AddBookForm(
     onIsReadChange: (Boolean) -> Unit,
     onSave: () -> Unit,
     onCancel: () -> Unit,
+    onClear: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     val isFormValid = title.isNotBlank() && author.isNotBlank()
@@ -81,6 +82,13 @@ fun AddBookForm(
                 modifier = Modifier.weight(1f)
             ) {
                 Text(stringResource(R.string.cancel))
+            }
+
+            OutlinedButton(
+                onClick = onClear,
+                modifier = Modifier.weight(1f)
+            ) {
+                Text(stringResource(R.string.clear_form))
             }
 
             Button(

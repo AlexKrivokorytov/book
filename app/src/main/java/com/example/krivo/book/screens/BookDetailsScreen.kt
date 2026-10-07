@@ -2,7 +2,9 @@ package com.example.krivo.book.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -27,6 +29,7 @@ fun BookDetailsScreen(
                 .fillMaxSize()
                 .padding(16.dp)
         ) {
+            Spacer(modifier = Modifier.height(24.dp))
             Text(stringResource(R.string.book_not_found))
             TextButton(onClick = onBack) {
                 Text(stringResource(R.string.back))
@@ -41,6 +44,7 @@ fun BookDetailsScreen(
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
+        Spacer(modifier = Modifier.height(24.dp))
         TextButton(onClick = onBack) {
             Text(stringResource(R.string.back))
         }
