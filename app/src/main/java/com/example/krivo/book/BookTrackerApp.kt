@@ -2,7 +2,6 @@ package com.example.krivo.book
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation3.runtime.entryProvider
@@ -18,14 +17,7 @@ import com.example.krivo.book.ui.BookViewModel
 
 @Composable
 fun BookTrackerApp() {
-    val application =
-        LocalContext.current.applicationContext as BookTrackerApplication
-
-    val bookViewModel: BookViewModel = viewModel(
-        factory = BookViewModel.Factory(
-            application.container.bookRepository
-        )
-    )
+    val bookViewModel: BookViewModel = viewModel(factory = BookViewModel.Factory)
 
     val uiState by bookViewModel.uiState.collectAsStateWithLifecycle()
     val backStack = rememberNavBackStack(BookListRoute)

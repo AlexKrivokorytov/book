@@ -2,7 +2,11 @@ package com.example.krivo.book.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
+import com.example.krivo.book.BookTrackerApplication
 import com.example.krivo.book.data.BookRepository
 import com.example.krivo.book.model.Book
 import kotlinx.coroutines.flow.SharingStarted
@@ -54,14 +58,14 @@ class BookViewModel(
         }
     }
 
-    class Factory(
-        private val repository: BookRepository
-    ) : ViewModelProvider.Factory {
-        @Suppress("UNCHECKED_CAST")
-        override fun <T : ViewModel> create(
-            modelClass: Class<T>
-        ): T {
-            return BookViewModel(repository) as T
+    companion object {
+        val Factory: ViewModelProvider.Factory = viewModelFactory {
+            initializer {
+                val application = (this[APPLICATION_KEY] as BookTrackerApplication)
+                BookViewModel(
+                    repository = application.container.bookRepository
+                )
+            }
         }
     }
 }
